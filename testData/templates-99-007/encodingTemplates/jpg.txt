@@ -1,0 +1,29 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The content of the DocumentData element is a JPEG image. The file conforms
+to ISO 10918-1:1994, 'Information Technology - Digital compression and
+coding of continuous-tone still images: Requirements and guidelines' (also
+known as ITU-T T.81), and may also conform to 'JPEG File Interchange Format',
+version 1.02. The file has been encoded using Base64, which is defined in
+IETF RFC 2045 'Multipurpose Internet Mail Extensions (MIME) Part One: Format
+of Internet Message Bodies', Section 6.8 'Base64 Content-Transfer-Encoding'.
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.b64; .jpg'
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file binary 1 $$      </vers:DocumentData>

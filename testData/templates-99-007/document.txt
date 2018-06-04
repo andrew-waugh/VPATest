@@ -1,0 +1,20 @@
+      <vers:DocumentAgent>
+       <vers:Text>
+$$ column 1 $$
+       </vers:Text>
+      </vers:DocumentAgent>
+      <vers:DocumentTitle>
+       <vers:Text>
+$$ column 2 $$
+       </vers:Text>
+      </vers:DocumentTitle>
+      <vers:DocumentDate>
+       <vers:Text>
+        2003-03-20T23:24:06-10:00
+       </vers:Text>
+      </vers:DocumentDate>
+      <vers:DocumentSource>
+       <vers:Text>
+        Microsoft Word 97 
+       </vers:Text>
+      </vers:DocumentSource>

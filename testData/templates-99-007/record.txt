@@ -1,0 +1,101 @@
+    <vers:RecordMetadata>
+     <naa:Agent>
+      <naa:AgentType>
+       Document Author
+      </naa:AgentType>
+      <naa:Jurisdiction>
+       Victoria
+      </naa:Jurisdiction>
+      <naa:CorporateId>
+       VA 683
+      </naa:CorporateId>
+      <naa:CorporateName>
+       Public Record Office Victoria
+      </naa:CorporateName>
+     </naa:Agent>
+     <naa:RightsManagement>
+      <naa:SecurityClassification>
+       Unclassified
+      </naa:SecurityClassification>
+      <naa:UsageCondition>
+       Copyright State of Victoria 2006
+      </naa:UsageCondition>
+     </naa:RightsManagement>
+     <naa:Title>
+      <naa:SchemeType>
+       Free text
+      </naa:SchemeType>
+      <naa:SchemeName>
+       None
+      </naa:SchemeName>
+      <naa:TitleWords>
+$$ 5 $$
+      </naa:TitleWords>
+     </naa:Title>
+     <naa:Language>
+      en
+     </naa:Language>
+     <naa:Date>
+      <naa:DateTimeCreated>
+$$ date $$
+      </naa:DateTimeCreated>
+      <naa:DateTimeTransacted>
+$$ date $$
+      </naa:DateTimeTransacted>
+      <naa:DateTimeRegistered>
+$$ date $$
+      </naa:DateTimeRegistered>
+     </naa:Date>
+     <naa:AggregationLevel>
+      Item
+     </naa:AggregationLevel>
+     <naa:ManagementHistory>
+      <vers:ManagementEvent>
+       <naa:EventDateTime>
+$$ date $$
+       </naa:EventDateTime>
+       <naa:EventType>
+        Created
+       </naa:EventType>
+       <naa:EventDescription>
+        Created by user ajw (Andrew Waugh)
+       </naa:EventDescription>
+      </vers:ManagementEvent>
+     </naa:ManagementHistory>
+     <naa:Disposal>
+      <naa:DisposalAuthorisation>
+       No Disposal Coverage
+      </naa:DisposalAuthorisation>
+      <naa:Sentence>
+       No Disposal Coverage
+      </naa:Sentence>
+      <naa:DisposalActionDue>
+       Null
+      </naa:DisposalActionDue>
+      <naa:DisposalStatus>
+       Unknown
+      </naa:DisposalStatus>
+     </naa:Disposal>
+     <vers:VEOIdentifier>
+      <vers:AgencyIdentifier>
+       <vers:Text>
+$$ 1 $$
+       </vers:Text>
+      </vers:AgencyIdentifier>
+      <vers:SeriesIdentifier>
+       <vers:Text>
+$$ 2 $$
+       </vers:Text>
+      </vers:SeriesIdentifier>
+      <vers:FileIdentifier>
+       <vers:Text>
+$$ 3 $$
+       </vers:Text>
+      </vers:FileIdentifier>
+      <vers:VERSRecordIdentifier>
+       <vers:Text>
+$$ 4 $$
+       </vers:Text>
+      </vers:VERSRecordIdentifier>
+     </vers:VEOIdentifier>
+    </vers:RecordMetadata>

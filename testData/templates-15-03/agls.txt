@@ -1,0 +1,13 @@
+http://prov.vic.gov.au/vers/schema/AGLS	http://www.w3.org/1999/02/22-rdf-syntax-ns
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+	 xmlns:aglsterms="http://www.agls.gov.au/agls/terms/"
+	 xmlns:versterms="http://www.prov.vic.gov.au/vers/terms/">
+<rdf:Description rdf:about="$$3$$">
+ <dcterms:creator>Andrew Waugh</dcterms:creator>
+ <dcterms:created rdf:datatype="xsd:datetime">$$date$$</dcterms:created>
+ <dcterms:title>$$4$$</dcterms:title>
+ <dcterms:identifier>$$5$$</dcterms:identifier>
+ <dcterms:description>This is the test $$5$$</dcterms:description>
+</rdf:Description>
+</rdf:RDF>
+
