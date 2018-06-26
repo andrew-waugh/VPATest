@@ -120,7 +120,6 @@ public class CreateBulkV3 {
     boolean verbose;        // true if generate lots of detail
     boolean debug;          // true if debugging
     String hashAlg;         // hash algorithm to use
-    CreateVEO.AddMode mode; // mode to use when including content files
     Templates templates;    // database of templates
     double probDepthChange; // probability of changing the depth
 
@@ -161,7 +160,6 @@ public class CreateBulkV3 {
         debug = false;
         hashAlg = "SHA-512";
         probDepthChange = 0.3333;
-        mode = CreateVEO.AddMode.HARD_LINK;
 
         // process command line arguments
         configure(args);
@@ -276,24 +274,6 @@ public class CreateBulkV3 {
                         i++;
                         break;
 
-                    // copy content
-                    case "-copy":
-                        i++;
-                        mode = CreateVEO.AddMode.COPY;
-                        break;
-
-                    // move content
-                    case "-move":
-                        i++;
-                        mode = CreateVEO.AddMode.MOVE;
-                        break;
-
-                    // link content
-                    case "-link":
-                        i++;
-                        mode = CreateVEO.AddMode.HARD_LINK;
-                        break;
-
                     // if verbose...
                     case "-v":
                         chatty = true;
@@ -344,19 +324,6 @@ public class CreateBulkV3 {
         }
         LOG.log(Level.INFO, "Output directory is ''{0}''", outputDir.toString());
         LOG.log(Level.INFO, "Hash algorithm is ''{0}''", hashAlg);
-        switch (mode) {
-            case COPY:
-                LOG.log(Level.INFO, "Content files are to be copied");
-                break;
-            case MOVE:
-                LOG.log(Level.INFO, "Content files are to be moved");
-                break;
-            case HARD_LINK:
-                LOG.log(Level.INFO, "Content files are to be hard linked");
-                break;
-            default:
-                break;
-        }
         if (LOG.getLevel() == Level.INFO) {
             LOG.log(Level.INFO, "Verbose output is selected");
         } else if (LOG.getLevel() == Level.FINE) {
@@ -465,7 +432,7 @@ public class CreateBulkV3 {
                 veo.addVEOReadme(templateDir);
 
                 // add content
-                veo.addContent(mode, p);
+                veo.addContent(p);
 
                 // create information objects
                 for (j = 0; j < ios.size(); j++) {
