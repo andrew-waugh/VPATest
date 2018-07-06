@@ -8,7 +8,7 @@ package VPATest;
 import VEOCreate.CreateVEO;
 import VEOCreate.Templates;
 import VEOGenerator.ArrayDataSource;
-import VPA.AppFatal;
+import VERSCommon.AppFatal;
 import VEOGenerator.Fragment;
 import VEOGenerator.VEOGenerator;
 import VEOGenerator.PFXUser;
