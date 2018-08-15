@@ -1,0 +1,26 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The content of the encoding is in the Extensible Markup Language (XML) 1.0,
+second edition, W3C Recommendation, 6 October 2000
+(http://www.w3c.org/TR/2000/REC-xml-20001006 visited 30 June 2006).
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.b64; .xml'
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file xml 1 $$
+      </vers:DocumentData>

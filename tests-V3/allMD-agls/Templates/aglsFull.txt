@@ -1,0 +1,64 @@
+http://prov.vic.gov.au/vers/schema/AGLS	http://www.w3.org/1999/02/22-rdf-syntax-ns
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+	 xmlns:aglsterms="http://www.agls.gov.au/agls/terms/"
+	 xmlns:versterms="http://www.prov.vic.gov.au/vers/terms">
+<rdf:Description rdf:about="http://www.example.org/123">
+ <dcterms:creator>Creator1</dcterms:creator>
+ <dcterms:creator>Creator2</dcterms:creator>
+ <dcterms:date rdf:datatype="xsd:date">2018-08-13T10:00:00+10:00</dcterms:date>
+ <dcterms:created rdf:datatype="xsd:date">2018-08-13T10:00:01+10:00</dcterms:created>
+ <dcterms:available rdf:datatype="xsd:date">2018-08-13T10:00:02+10:00</dcterms:available>
+ <dcterms:dateCopyrighted rdf:datatype="xsd:date">2018-08-13T10:00:03+10:00</dcterms:dateCopyrighted>
+ <dcterms:dateLicensed rdf:datatype="xsd:date">2018-08-13T10:00:04+10:00</dcterms:dateLicensed>
+ <dcterms:issued rdf:datatype="xsd:date">2018-08-13T10:00:05+10:00</dcterms:issued>
+ <dcterms:modified rdf:datatype="xsd:date">2018-08-13T10:00:06+10:00</dcterms:modified>
+ <dcterms:valid rdf:datatype="xsd:date">2018-08-13T10:00:07+10:00</dcterms:valid>
+ <dcterms:date rdf:datatype="xsd:date">2018-08-13T10:01:00+10:00</dcterms:date>
+ <dcterms:created rdf:datatype="xsd:date">2018-08-13T10:01:01+10:00</dcterms:created>
+ <dcterms:available rdf:datatype="xsd:date">2018-08-13T10:01:02+10:00</dcterms:available>
+ <dcterms:dateCopyrighted rdf:datatype="xsd:date">2018-08-13T10:01:03+10:00</dcterms:dateCopyrighted>
+ <dcterms:dateLicensed rdf:datatype="xsd:date">2018-08-13T10:01:04+10:00</dcterms:dateLicensed>
+ <dcterms:issued rdf:datatype="xsd:date">2018-08-13T10:01:05+10:00</dcterms:issued>
+ <dcterms:modified rdf:datatype="xsd:date">2018-08-13T10:01:06+10:00</dcterms:modified>
+ <dcterms:valid rdf:datatype="xsd:date">2018-08-13T10:01:07+10:00</dcterms:valid>
+ <dcterms:title>Title1</dcterms:title>
+ <dcterms:title>Title2</dcterms:title>
+ <dcterms:identifier>Identifier1</dcterms:identifier>
+ <dcterms:identifier>Identifier2</dcterms:identifier>
+ <dcterms:description>Description1</dcterms:description>
+ <dcterms:description>Description2</dcterms:description>
+ <dcterms:relation>Relation1</dcterms:relation>
+ <dcterms:relation>Relation2</dcterms:relation>
+ <dcterms:conformsTo>ConformsTo1</dcterms:conformsTo>
+ <dcterms:conformsTo>ConformsTo2</dcterms:conformsTo>
+ <dcterms:hasFormat>hasFormat1</dcterms:hasFormat>
+ <dcterms:hasFormat>hasFormat2</dcterms:hasFormat>
+ <dcterms:hasPart>hasPart1</dcterms:hasPart>
+ <dcterms:hasPart>hasPart2</dcterms:hasPart>
+ <dcterms:hasVersion>hasVersion1</dcterms:hasVersion>
+ <dcterms:hasVersion>hasVersion2</dcterms:hasVersion>
+ <dcterms:isBasisFor>isBasisFor1</dcterms:isBasisFor>
+ <dcterms:isBasisFor>isBasisFor2</dcterms:isBasisFor>
+ <dcterms:isBasedOn>isBasedOn1</dcterms:isBasedOn>
+ <dcterms:isBasedOn>isBasedOn2</dcterms:isBasedOn>
+ <dcterms:isFormatOf>isFormatOf1</dcterms:isFormatOf>
+ <dcterms:isFormatOf>isFormatOf2</dcterms:isFormatOf>
+ <dcterms:isPartOf>isPartOf1</dcterms:isPartOf>
+ <dcterms:isPartOf>isPartOf2</dcterms:isPartOf>
+ <dcterms:isReferencedBy>isReferencedBy1</dcterms:isReferencedBy>
+ <dcterms:isReferencedBy>isReferencedBy2</dcterms:isReferencedBy>
+ <dcterms:isReplacedBy>isReplacedBy1</dcterms:isReplacedBy>
+ <dcterms:isReplacedBy>isReplacedBy2</dcterms:isReplacedBy>
+ <dcterms:isVersionOf>isVersionOf1</dcterms:isVersionOf>
+ <dcterms:isVersionOf>isVersionOf2</dcterms:isVersionOf>
+ <dcterms:replaces>replaces1</dcterms:replaces>
+ <dcterms:replaces>replaces2</dcterms:replaces>
+ <dcterms:requires>requires1</dcterms:requires>
+ <dcterms:requires>requires2</dcterms:requires>
+ <aglsterms:function>Function1</aglsterms:function>
+ <versterms:disposalReference>Disposal Reference1</versterms:disposalReference>
+ <versterms:disposal-Reference>Disposal Reference1 - wrong term</versterms:disposal-Reference>
+ <versterms:disposalReference>Disposal Reference2</versterms:disposalReference>
+</rdf:Description>
+</rdf:RDF>
+

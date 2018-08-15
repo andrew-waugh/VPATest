@@ -1,0 +1,26 @@
+<vers:SignedObject vers:VEOVersion="2.0">
+<vers:ObjectMetadata>
+ <vers:ObjectType>Modified VEO</vers:ObjectType>
+ <vers:ObjectTypeDescription>This object contains a VEO which has been modified. The modified VEO may be a Record VEO, a File VEO, or another Modified VEO.</vers:ObjectTypeDescription>
+ <vers:ObjectCreationDate>2016-11-15T13:18:13+11:00</vers:ObjectCreationDate>
+</vers:ObjectMetadata>
+<vers:ObjectContent>
+ <vers:ModifiedVEO vers:OriginalVEOType="File">
+  <vers:DateTimeModified>2016-11-16T09:32:59+10:00</vers:DateTimeModified>
+  <vers:RevisedVEO vers:id="Revision-2">
+   <vers:SignedObject vers:VEOVersion="2.0">
+	Replace
+   </vers:SignedObject>
+  </vers:RevisedVEO>
+  <vers:OriginalVEO>
+   <vers:Version>2.0</vers:Version>
+   <vers:SignatureBlock vers:id="Revision-1-Signature-1">
+	Replace
+   </vers:SignatureBlock>
+   <vers:SignedObject vers:VEOVersion="2.0">
+	Replace
+   </vers:SignedObject>
+  </vers:OriginalVEO>
+ </vers:ModifiedVEO>
+</vers:ObjectContent>
+</vers:SignedObject>

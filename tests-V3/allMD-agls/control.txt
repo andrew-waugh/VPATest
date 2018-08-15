@@ -1,0 +1,20 @@
+!	Construct V3 VEOs to test test the VPA
+hash	SHA-1
+pfx	../signer.pfx	Ag0nc1eS
+
+!	VEO with all AGLS metadata that is harvested(two IOs, one with an MP & one IP, the other with an MP & two IPs, two Es)
+BV	v3-001-allMD-agls
+IO	Record	1
+MP	aglsFull
+IP	Data	S-37-6/S-37-6-Nov.docx
+IO	Data	2
+IP	Content	S-37-6/S-37-6-Nov.docx	S-37-6/S-37-6-Nov.docx
+E	2014-09-09	Event1	Initiator1	Description11	Description12	$$	Error11	Error12
+E	2014-09-10	Event2	Initiator2	Description2	$$	Error2
+
+!	VEO with minimal AGLS metadata
+BV	v3-002-minMD-agls
+IO		0
+MP	aglsMin
+IP		S-37-6/S-37-6-Nov.docx
+E	2014-09-09	Event1	Initiator1	Description11

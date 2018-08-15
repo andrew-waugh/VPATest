@@ -1,0 +1,12 @@
+http://prov.vic.gov.au/vers/schema/AGLS	http://www.w3.org/1999/02/22-rdf-syntax-ns
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/"
+	 xmlns:aglsterms="http://www.agls.gov.au/agls/terms/">
+<rdf:Description rdf:about="http://www.example.org/123">
+ <dcterms:creator>Creator1</dcterms:creator>
+ <dcterms:date rdf:datatype="xsd:date">$$date$$</dcterms:date>
+ <dcterms:title>Title1</dcterms:title>
+ <dcterms:identifier>Identifier1</dcterms:identifier>
+ <dcterms:publisher>Publisher1</dcterms:publisher>
+</rdf:Description>
+</rdf:RDF>
+

@@ -1,0 +1,28 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The content of the DocumentData element is a text file. The characters in the
+text file conform to UTF-8 encoded Unicode. Unicode is defined in 'The
+Unicode Standard', Version 3.0, The Unicode Consortium, Addison-Wesley, 2000,
+ISBN 0-201-61633-5, or the equivalent ISO 10646:2000. The ampersand (and),
+greater than, and less than characters have been escaped using the standard
+XML escape conventions '&amp;', '&lt;', and '&gt;' respectively.
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.txt'
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file utf8 1 $$     </vers:DocumentData>

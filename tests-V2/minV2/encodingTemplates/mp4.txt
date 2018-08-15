@@ -1,0 +1,32 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The content of the DocumentData element is an MPEG-4 video stream encoded
+in the AVC or MP file format. The file conforms to the following parts of
+ISO/IEC 14496 'Information Technology - Coding of audio-visual objects',
+Part 1:2004 (including Amd 1: 2005 and Amd 8:2004), Part 2:2004 (including
+Cor 1:2004, Amd 1:2004, and Amd 2:2005), Part 3:2004, and either Part 14:2003
+(including Cor 1:2006) OR Part 10:2005, and Part 15:2004 (including
+Cor 1:2006, and Amd 1:2006). The file has been encoded using Base64, which is
+defined in IETF RFC 2045 'Multipurpose Internet Mail Extensions (MIME) Part
+One: Format of Internet Message Bodies’, Section 6.8 'Base64
+Content-Transfer-Encoding'.
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.b64; .mp4'
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file binary 1 $$      </vers:DocumentData>

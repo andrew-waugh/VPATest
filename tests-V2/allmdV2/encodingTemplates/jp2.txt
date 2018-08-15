@@ -1,0 +1,28 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The content of the DocumentData element is a JPEG 2000 image. The file
+conforms to ISO 15444-1:2004, 'Information Technology - JPEG 2000 image
+coding system: Core coding system' (also known as ITU-T T.800). The file
+has been encoded using Base64, which is defined in IETF RFC 2045
+'Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet
+Message Bodies', Section 6.8 'Base64 Content-Transfer-Encoding'.
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.b64; .jp2'
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file binary 1 $$      </vers:DocumentData>

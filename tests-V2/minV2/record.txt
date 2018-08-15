@@ -1,0 +1,45 @@
+    <vers:RecordMetadata>
+     <naa:Agent>
+      <naa:AgentType>Document Author</naa:AgentType>
+      <naa:CorporateName>Agent/CorporateName</naa:CorporateName>
+     </naa:Agent>
+     <naa:RightsManagement>
+      <naa:SecurityClassification>Unclassified</naa:SecurityClassification>
+     </naa:RightsManagement>
+     <naa:Title>
+      <naa:SchemeType>Free text</naa:SchemeType>
+      <naa:SchemeName>Title/SchemeName</naa:SchemeName>
+      <naa:TitleWords>Title/TitleWords</naa:TitleWords>
+     </naa:Title>
+     <naa:Date>
+      <naa:DateTimeCreated>$$ date $$</naa:DateTimeCreated>
+      <naa:DateTimeTransacted>$$ date $$</naa:DateTimeTransacted>
+      <naa:DateTimeRegistered>$$ date $$</naa:DateTimeRegistered>
+     </naa:Date>
+     <naa:AggregationLevel>Item</naa:AggregationLevel>
+     <naa:ManagementHistory>
+      <vers:ManagementEvent>
+       <naa:EventDateTime>$$ date $$</naa:EventDateTime>
+       <naa:EventType>Created</naa:EventType>
+       <naa:EventDescription>MgmtHistory/Description</naa:EventDescription>
+      </vers:ManagementEvent>
+     </naa:ManagementHistory>
+     <naa:Disposal>
+      <naa:DisposalAuthorisation>No Disposal Coverage</naa:DisposalAuthorisation>
+      <naa:Sentence>No Disposal Coverage</naa:Sentence>
+     </naa:Disposal>
+     <vers:VEOIdentifier>
+      <vers:AgencyIdentifier>
+       <vers:Text>2876</vers:Text>
+      </vers:AgencyIdentifier>
+      <vers:SeriesIdentifier>
+       <vers:Text>13181</vers:Text>
+      </vers:SeriesIdentifier>
+      <vers:FileIdentifier>
+       <vers:Text>veoID/fileID</vers:Text>
+      </vers:FileIdentifier>
+      <vers:VERSRecordIdentifier>
+       <vers:Text>veoID/recID</vers:Text>
+      </vers:VERSRecordIdentifier>
+     </vers:VEOIdentifier>
+    </vers:RecordMetadata>

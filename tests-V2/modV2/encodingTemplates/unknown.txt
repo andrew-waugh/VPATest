@@ -1,0 +1,26 @@
+      <vers:EncodingMetadata>
+       <vers:FileEncoding>
+        <vers:Text>
+The format of this encoding is unknown. The file has been
+encoded using Base64, which is defined in IETF RFC 2045 'Multipurpose
+Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies',
+Section 6.8, 'Base64 Content-Transfer-Encoding'.
+        </vers:Text>
+       </vers:FileEncoding>
+       <vers:SourceFileIdentifier>
+$$ column 1 $$
+       </vers:SourceFileIdentifier>
+       <vers:FileRendering>
+        <vers:RenderingText>
+         <vers:Text>
+          See the vers:FileEncoding element
+         </vers:Text>
+        </vers:RenderingText>
+        <vers:RenderingKeywords>
+         '.b64; $$ column 5 $$
+        </vers:RenderingKeywords>
+       </vers:FileRendering>
+      </vers:EncodingMetadata>
+      <vers:DocumentData
+        vers:id="Revision-$$2$$-Document-$$3$$-Encoding-$$4$$-DocumentData">
+$$ file binary 1 $$      </vers:DocumentData>

@@ -1,0 +1,45 @@
+    <vers:FileMetadata>
+     <naa:Agent>
+      <naa:AgentType>Document Author</naa:AgentType>
+      <naa:CorporateName>CorporateName</naa:CorporateName>
+     </naa:Agent>
+     <naa:RightsManagement>
+      <naa:SecurityClassification>Unclassified</naa:SecurityClassification>
+     </naa:RightsManagement>
+     <naa:Title>
+      <naa:SchemeType>
+       Free text
+      </naa:SchemeType>
+      <naa:SchemeName>Title/SchemeName</naa:SchemeName>
+      <naa:TitleWords>Title/TitleWords</naa:TitleWords>
+     </naa:Title>
+     <vers:Date>
+      <naa:DateTimeCreated>2003-03-20T23:24:06-10:00</naa:DateTimeCreated>
+      <naa:DateTimeTransacted>2003-03-21T23:24:06-10:00</naa:DateTimeTransacted>
+      <naa:DateTimeRegistered>2003-03-22T23:24:06-10:00</naa:DateTimeRegistered>
+      <vers:DateTimeClosed>2003-03-24T23:24:06-10:00</vers:DateTimeClosed>
+     </vers:Date>
+     <naa:AggregationLevel>File</naa:AggregationLevel>
+     <naa:ManagementHistory>
+      <vers:ManagementEvent>
+       <naa:EventDateTime>2003-03-25T23:24:06-10:00</naa:EventDateTime>
+       <naa:EventType>Created</naa:EventType>
+       <naa:EventDescription>MgmtHist/EventDesc</naa:EventDescription>
+      </vers:ManagementEvent>
+     </naa:ManagementHistory>
+     <naa:Disposal>
+      <naa:DisposalAuthorisation>No Disposal Coverage</naa:DisposalAuthorisation>
+      <naa:Sentence>No Disposal Coverage</naa:Sentence>
+     </naa:Disposal>
+     <vers:VEOIdentifier>
+      <vers:AgencyIdentifier>
+       <vers:Text>2876</vers:Text>
+      </vers:AgencyIdentifier>
+      <vers:SeriesIdentifier>
+       <vers:Text>13181</vers:Text>
+      </vers:SeriesIdentifier>
+      <vers:FileIdentifier>
+       <vers:Text>fileId</vers:Text>
+      </vers:FileIdentifier>
+     </vers:VEOIdentifier>
+    </vers:FileMetadata>

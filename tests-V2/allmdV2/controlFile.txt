@@ -1,0 +1,10 @@
+f	v2-002-allMDVEO-F.veo	
+r	v2-003-allMDVEO-R.veo	
+d	1
+e	ex.tif
+e	ex.tif
+d	2
+e	ex.tif
+d	3
+e	S-41-2-Mar.docx
+e	S-41-2-Mar.pdf

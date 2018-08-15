@@ -1,0 +1,12 @@
+      <vers:DocumentAgent>
+       <vers:Text>DocumentAgent</vers:Text>
+      </vers:DocumentAgent>
+      <vers:DocumentTitle>
+       <vers:Text>DocumentTitle</vers:Text>
+      </vers:DocumentTitle>
+      <vers:DocumentDate>
+       <vers:Text>2003-03-20T23:24:06-10:00</vers:Text>
+      </vers:DocumentDate>
+      <vers:DocumentSource>
+       <vers:Text>DocumentSource</vers:Text>
+      </vers:DocumentSource>
