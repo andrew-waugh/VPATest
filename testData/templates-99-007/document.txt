@@ -1,11 +1,9 @@
       <vers:DocumentAgent>
-       <vers:Text>
-$$ column 1 $$
-       </vers:Text>
+       <vers:Text>Jane Smith</vers:Text>
       </vers:DocumentAgent>
       <vers:DocumentTitle>
        <vers:Text>
-$$ column 2 $$
+Title $$ 2 $$-$$ 3 $$
        </vers:Text>
       </vers:DocumentTitle>
       <vers:DocumentDate>

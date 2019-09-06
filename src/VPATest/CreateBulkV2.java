@@ -5,16 +5,13 @@
  */
 package VPATest;
 
-import VEOCreate.CreateVEO;
 import VEOCreate.Templates;
 import VEOGenerator.ArrayDataSource;
-import VERSCommon.AppFatal;
 import VEOGenerator.Fragment;
 import VEOGenerator.VEOGenerator;
 import VEOGenerator.PFXUser;
 import VEOGenerator.VEOError;
 import VERSCommon.VEOFatal;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
@@ -44,21 +41,18 @@ import java.util.logging.Logger;
  * <p>
  * The following command line arguments are optional:
  * <ul>
- * <li><b>-m &lt;count&gt;</b> The maximum number of Information Objects to be
- * created in the VEO.
- * <li><b>-p &lt;probability&gt;</b> The probability, p, that a level change up
- * or down will occur after the construction of this Information Object. The
- * probability of going one deeper is p, the probability of going one shallower
- * is p, and the probability of staying at the same depth is 1-2*p. The VEO will
- * be completed when the depth returns to 1 (or if the maximum number of IOs is
- * generated).
+ * <li><b>-m &lt;count&gt;</b> The maximum number of Documents to be created in
+ * the VEO.
+ * <li><b>-p &lt;probability&gt;</b> The probability, p, that a new file will be
+ * started after a Record VEO is generated. The default is 0.25.
  * <li><b>-v</b> verbose output. By default off.</li>
  * <li><b>-d</b> debug mode. In this mode more logging will be generated, and
  * the VEO directories will not be deleted after the ZIP file is created. By
  * default off.</li>
  * <li><b>-ha &lt;algorithm&gt;</b> The hash algorithm used to protect the
- * content files and create signatures. Valid values are: . The default is
- * 'SHA-1'. The hash algorithm can also be set in the control file.
+ * content files and create signatures. Valid values are: 'SHA-256', ''SHA-384',
+ * 'SHA-512', ''SHA-1', and 'MD5'. The default is 'SHA-512'. The hash algorithm
+ * can also be set in the control file.
  * <li><b>-s &lt;PFXfile&gt; &lt;password&gt;</b> a PFX file containing details
  * about the signer (particularly the private key) and the password. The PFX
  * file can also be specified in the control file. If no -s command line
@@ -66,15 +60,6 @@ import java.util.logging.Logger;
  * <li><b>-o &lt;outputDir&gt;</b> the directory in which the VEOs are to be
  * created. If not present, the VEOs will be created in the current
  * directory.</li>
- * <li><b>-copy</b> If present, this argument forces content files to be copied
- * to the VEO directory when creating the VEO. This is the slowest option, but
- * it is the most certain to succeed.</li>
- * <li><b>-move</b> If present, the content files will be moved to the VEO
- * directory. This is faster than -copy, but typically can only be performed on
- * the same file system.</li>
- * <li><b>-link</b> If present, the content files will be linked to the VEO
- * directory. This is the fastest option, but may not work on all computer
- * systems and files. -link is the default</li>
  * </ul>
  * <p>
  * A minimal example of usage is<br>
@@ -97,7 +82,11 @@ import java.util.logging.Logger;
  * $$ date $$ - substitute the current date and time in VERS format</li>
  * <li>
  * $$ [column] &gt;x&gt; $$ - substitute the contents of column &lt;x&gt;. Note
- * that keyword 'column' is optional.</li>
+ * that keyword 'column' is optional. In preparting the templates for use with
+ * this program note that a standard set of columns are generated: 0 is the
+ * VEO name (i.e. filename without the '.veo'), 1 is the file identifier,
+ * 2 is the sequence number (i.e. number of this VEO produced in the run), and
+ * 3 is the document number (i.e. number of this document within the VEO).</li>
  * <li>
  * $$ file utf8|xml [column] &lt;x&gt; $$ - include the contents of the file
  * specified in column &lt;x&gt;. The file is encoded depending on the second
@@ -105,16 +94,12 @@ import java.util.logging.Logger;
  * characters &lt;, &gt;, and &amp; encoded; and an 'xml' file is included as
  * is. Note that keyword 'column' is optional.</li>
  * </ul>
- * <p>
- * The MP/MPC commands in the control file contain the information used in the
- * column or file substitutions. Note that the command occupies column 1, and
- * the template name column 2. So real data starts at column 3.
  */
 public class CreateBulkV2 {
 
     static String classname = "CreateBulkV3"; // for reporting
     int maxVeos;            // number of VEOs to create
-    int maxIOs;             // maximum size of VEO (in IOs)
+    int maxDocs;             // maximum size of VEO (in IOs)
     FileOutputStream fos;   // underlying file stream for file channel
     Path testConfigDir;     // directory that holds the test configuration
     Path templateDir;       // directory that holds the templates
@@ -126,6 +111,7 @@ public class CreateBulkV2 {
     boolean debug;          // true if debugging
     String hashAlg;         // hash algorithm to use
     Templates templates;    // database of templates
+    double probNewFile; // probability of changing the depth
 
     VEOGenerator vg;        // VEO Generator
     Path encDir;            // directory containing encoding templates
@@ -160,7 +146,7 @@ public class CreateBulkV2 {
         LOG.setLevel(Level.WARNING);
 
         maxVeos = 1;
-        maxIOs = 1000;
+        maxDocs = 1000;
         baseDir = Paths.get(".");
         outputDir = baseDir; // default is the current working directory
         signers = new ArrayList<>();
@@ -168,6 +154,7 @@ public class CreateBulkV2 {
         chatty = false;
         debug = false;
         hashAlg = "SHA-512";
+        probNewFile = 0.25;
 
         // process command line arguments
         configure(args);
@@ -199,7 +186,7 @@ public class CreateBulkV2 {
         int i;
         Path pfxFile;
         String pfxPasswd;
-        String usage = "CreateBulkV3 [-vv] [-v] [-d] -r <#veos> [-m <maxIOs>] [-p <probDepthChange>] -t <templateDir> [-s <pfxFile> <password>] [-o <outputDir>] [-ha <hashAlgorithm] [-copy|move|link] [-e <encoding>]";
+        String usage = "CreateBulkV3 [-vv] [-v] [-d] -r <#veos> [-m <maxDocs>] [-p <probDepthChange>] -t <templateDir> [-s <pfxFile> <password>] [-o <outputDir>] [-ha <hashAlgorithm]";
 
         // check for no arguments...
         if (args.length == 0) {
@@ -226,16 +213,16 @@ public class CreateBulkV2 {
                         i++;
                         break;
 
-                    // get maximum size of a VEO (in IOs)
+                    // get maximum size of a VEO (in docs)
                     case "-m":
                         i++;
                         try {
-                            maxIOs = Integer.parseInt(args[i]);
+                            maxDocs = Integer.parseInt(args[i]);
                         } catch (NumberFormatException nfe) {
                             throw new VEOFatal(classname, 2, "Argument to -m switch must be an integer: '" + args[i] + "': " + nfe.getMessage());
                         }
-                        if (maxIOs < 1) {
-                            throw new VEOFatal(classname, 2, "Argument to -m switch must greater than 0: '" + maxIOs + "'");
+                        if (maxDocs < 1) {
+                            throw new VEOFatal(classname, 2, "Argument to -m switch must greater than 0: '" + maxDocs + "'");
                         }
                         i++;
                         break;
@@ -275,7 +262,21 @@ public class CreateBulkV2 {
                         i++;
                         break;
 
-                    // if verbose...
+                    // get probability of a depth change when creating 
+                    case "-p":
+                        i++;
+                        try {
+                            probNewFile = Double.parseDouble(args[i]);
+                        } catch (NumberFormatException nfe) {
+                            throw new VEOFatal(classname, 2, "Argument to -p switch must be a floating point number: '" + args[i] + "': " + nfe.getMessage());
+                        }
+                        if (probNewFile <= 0 || probNewFile > 1.0) {
+                            throw new VEOFatal(classname, 2, "Argument to -p switch must greater than 0 and less than or equal to 1.0: '" + probNewFile + "'");
+                        }
+                        i++;
+                        break;
+
+// if verbose...
                     case "-v":
                         chatty = true;
                         i++;
@@ -313,7 +314,7 @@ public class CreateBulkV2 {
         }
 
         LOG.log(Level.INFO, "Number of VEOs to create: {0}", maxVeos);
-        LOG.log(Level.INFO, "Maximum size of VEOs (in IOs): {0}", maxIOs);
+        LOG.log(Level.INFO, "Maximum size of VEOs (in IOs): {0}", maxDocs);
         LOG.log(Level.INFO, "Test configuration directory is ''{0}''", testConfigDir.toString());
         /*
         if (!signers.isEmpty()) {
@@ -377,7 +378,7 @@ public class CreateBulkV2 {
     public void buildV2VEOs() throws VEOError {
         String method = "buildVEOs";
         String veoName;
-        int seqNo, cnt, i;
+        int seqNo, docNo, i;
         ArrayDataSource ads;
         String[] metadata;
         DirectoryStream<Path> ds;
@@ -405,22 +406,21 @@ public class CreateBulkV2 {
                     }
 
                     // start record, including generating the record metadata
-                    metadata = new String[5];
-                    metadata[0] = "123";
-                    metadata[1] = "421";
-                    metadata[2] = fileId;
-                    metadata[3] = veoName;
-                    metadata[4] = "Use of bogies";
+                    metadata = new String[3];
+                    metadata[0] = veoName;
+                    metadata[1] = fileId;
+                    metadata[2] = String.valueOf(seqNo);
                     ads = new ArrayDataSource(metadata);
                     vg.startRecord(rData, ads);
 
                     // add documents
-                    cnt = 0;
+                    docNo = 0;
                     do {
-                        metadata = new String[3];
-                        metadata[0] = "VA123";
-                        metadata[1] = veoName + "-" + cnt;
-                        metadata[2] = "First Doc";
+                        metadata = new String[4];
+                        metadata[0] = veoName;
+                        metadata[1] = fileId;
+                        metadata[2] = String.valueOf(seqNo);
+                        metadata[3] = String.valueOf(docNo);
                         ads = new ArrayDataSource(metadata);
                         vg.startDocument(dData, ads);
 
@@ -438,18 +438,18 @@ public class CreateBulkV2 {
                             System.err.println("Failed to process directory '" + srcDir.toString() + "': " + e.getMessage());
                         }
                         vg.endDocument();
-                        cnt++;
-                    } while (Math.random() < 0.4);
+                        docNo++;
+                    } while (Math.random() < 0.4 && docNo < maxDocs);
                     vg.endRecord();
                     vg.endVEO();
                 } catch (VEOError e) {
                     LOG.log(Level.WARNING, "Failed constructing VEO: {0}", new Object[]{e.getMessage()});
                     vg.cleanUpAfterError();
                 }
-                nextVEOisRec = (Math.random() < 0.9);
+                nextVEOisRec = (Math.random() < 1-probNewFile);
             } else {
-                veoName = "V2VEO-" + seqNo+"-F";
-                fileId = "21/"+fileNo;
+                veoName = "V2VEO-" + seqNo + "-F";
+                fileId = "21/" + fileNo;
                 if (chatty) {
                     System.out.println(System.currentTimeMillis() / 1000 + " Starting: " + veoName);
                 }
@@ -464,11 +464,10 @@ public class CreateBulkV2 {
                     }
 
                     // start record, including generating the record metadata
-                    metadata = new String[4];
-                    metadata[0] = "123";
-                    metadata[1] = "421";
-                    metadata[2] = fileId;
-                    metadata[3] = "Use of bogies";
+                    metadata = new String[3];
+                    metadata[0] = veoName;
+                    metadata[1] = fileId;
+                    metadata[2] = String.valueOf(seqNo);
                     ads = new ArrayDataSource(metadata);
                     vg.addFile(fData, ads);
                     vg.endVEO();

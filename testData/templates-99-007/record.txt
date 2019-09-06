@@ -28,37 +28,27 @@
       <naa:SchemeName>
        None
       </naa:SchemeName>
-      <naa:TitleWords>
-$$ 5 $$
-      </naa:TitleWords>
+      <naa:TitleWords>Title $$ 2 $$</naa:TitleWords>
      </naa:Title>
      <naa:Language>
       en
      </naa:Language>
      <naa:Date>
-      <naa:DateTimeCreated>
-$$ date $$
-      </naa:DateTimeCreated>
-      <naa:DateTimeTransacted>
-$$ date $$
-      </naa:DateTimeTransacted>
-      <naa:DateTimeRegistered>
-$$ date $$
-      </naa:DateTimeRegistered>
+      <naa:DateTimeCreated> $$ date $$</naa:DateTimeCreated>
+      <naa:DateTimeTransacted>$$ date $$</naa:DateTimeTransacted>
+      <naa:DateTimeRegistered>$$ date $$</naa:DateTimeRegistered>
      </naa:Date>
      <naa:AggregationLevel>
       Item
      </naa:AggregationLevel>
      <naa:ManagementHistory>
       <vers:ManagementEvent>
-       <naa:EventDateTime>
-$$ date $$
-       </naa:EventDateTime>
+       <naa:EventDateTime>$$ date $$</naa:EventDateTime>
        <naa:EventType>
         Created
        </naa:EventType>
        <naa:EventDescription>
-        Created by user ajw (Andrew Waugh)
+        Created by user jas <Jane Smith>
        </naa:EventDescription>
       </vers:ManagementEvent>
      </naa:ManagementHistory>
@@ -78,24 +68,16 @@ $$ date $$
      </naa:Disposal>
      <vers:VEOIdentifier>
       <vers:AgencyIdentifier>
-       <vers:Text>
-$$ 1 $$
-       </vers:Text>
+       <vers:Text>VA 2334</vers:Text>
       </vers:AgencyIdentifier>
       <vers:SeriesIdentifier>
-       <vers:Text>
-$$ 2 $$
-       </vers:Text>
+       <vers:Text>VPRS 1000198</vers:Text>
       </vers:SeriesIdentifier>
       <vers:FileIdentifier>
-       <vers:Text>
-$$ 3 $$
-       </vers:Text>
+       <vers:Text>$$ 1 $$</vers:Text>
       </vers:FileIdentifier>
       <vers:VERSRecordIdentifier>
-       <vers:Text>
-$$ 4 $$
-       </vers:Text>
+       <vers:Text>R-$$ 2 $$</vers:Text>
       </vers:VERSRecordIdentifier>
      </vers:VEOIdentifier>
     </vers:RecordMetadata>

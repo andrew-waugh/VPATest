@@ -25,7 +25,8 @@ import java.util.logging.Logger;
 /**
  * This class creates multiple VEOs for testing purposes. The VEOs vary in
  * number of Information Objects and Information Pieces, but each has the same
- * content files and metadata packages (but with customised titles etc).
+ * content files and metadata packages (but can have systematically varying
+ * metadata).
  * <h3>Command Line arguments</h3>
  * The following command line arguments must be supplied:
  * <ul>
@@ -59,15 +60,6 @@ import java.util.logging.Logger;
  * <li><b>-o &lt;outputDir&gt;</b> the directory in which the VEOs are to be
  * created. If not present, the VEOs will be created in the current
  * directory.</li>
- * <li><b>-copy</b> If present, this argument forces content files to be copied
- * to the VEO directory when creating the VEO. This is the slowest option, but
- * it is the most certain to succeed.</li>
- * <li><b>-move</b> If present, the content files will be moved to the VEO
- * directory. This is faster than -copy, but typically can only be performed on
- * the same file system.</li>
- * <li><b>-link</b> If present, the content files will be linked to the VEO
- * directory. This is the fastest option, but may not work on all computer
- * systems and files. -link is the default</li>
  * </ul>
  * <p>
  * A minimal example of usage is<br>
@@ -441,12 +433,13 @@ public class CreateBulkV3 {
 
                     // add a metadata package to 1st level information object
                     if (j == 0) {
-                        metadata = new String[5];
+                        metadata = new String[6];
                         metadata[0] = "mp";
                         metadata[1] = "agls";
                         metadata[2] = "http://www.prov.vic.gov.au/record/" + veoName;
                         metadata[3] = veoName;
-                        metadata[4] = veoName;
+                        metadata[4] = String.valueOf(i);
+                        metadata[4] = String.valueOf(j);
                         veo.addMetadataPackage(templates.findTemplate("agls"), metadata);
                     }
 
@@ -589,7 +582,7 @@ public class CreateBulkV3 {
                     lnkCnt++;
                 }
                 ref++;
-            };
+            }
             ios.add(io);
 
             // decide if the next IO is to be at the same level, go down one,
