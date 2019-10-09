@@ -401,8 +401,8 @@ public class CreateBulkV2 {
                     // start VEO, adding signature and lock signature blocks
                     vg.startVEO(outputDir.resolve(veoName + ".veo").toFile(), seqNo, 1);
                     for (i = 0; i < signers.size(); i++) {
-                        vg.addSignatureBlock(signers.get(i));
-                        vg.addLockSignatureBlock(1, signers.get(i));
+                        vg.addSignatureBlock(signers.get(i), hashAlg);
+                        vg.addLockSignatureBlock(1, signers.get(i), hashAlg);
                     }
 
                     // start record, including generating the record metadata
@@ -459,8 +459,8 @@ public class CreateBulkV2 {
                     // start VEO, adding signature and lock signature blocks
                     vg.startVEO(outputDir.resolve(veoName + ".veo").toFile(), seqNo, 1);
                     for (i = 0; i < signers.size(); i++) {
-                        vg.addSignatureBlock(signers.get(i));
-                        vg.addLockSignatureBlock(1, signers.get(i));
+                        vg.addSignatureBlock(signers.get(i), hashAlg);
+                        vg.addLockSignatureBlock(1, signers.get(i), hashAlg);
                     }
 
                     // start record, including generating the record metadata
