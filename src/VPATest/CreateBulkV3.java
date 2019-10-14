@@ -341,18 +341,18 @@ public class CreateBulkV3 {
         p = Paths.get(name);
 
         if (!Files.exists(p)) {
-            throw new VEOFatal(classname, 6, type + " '" + p.toAbsolutePath().toString() + "' does not exist");
+            throw new VEOFatal(classname, 6, type + " '" + p.normalize().toAbsolutePath().toString() + "' does not exist");
         }
         if (isDirectory
                 && !Files.isDirectory(p)) {
-            throw new VEOFatal(classname, 7, type + " '" + p.toAbsolutePath().toString() + "' is a file not a directory");
+            throw new VEOFatal(classname, 7, type + " '" + p.normalize().toAbsolutePath().toString() + "' is a file not a directory");
         }
         if (!isDirectory
                 && Files.isDirectory(p)) {
-            throw new VEOFatal(classname, 8, type + " '" + p.toAbsolutePath().toString() + "' is a directory not a file");
+            throw new VEOFatal(classname, 8, type + " '" + p.normalize().toAbsolutePath().toString() + "' is a directory not a file");
         }
         if (verbose) {
-            System.err.println(type + " is '" + p.toAbsolutePath().toString() + "'");
+            System.err.println(type + " is '" + p.normalize().toAbsolutePath().toString() + "'");
         }
         return p;
     }
